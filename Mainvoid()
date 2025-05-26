@@ -1,0 +1,32 @@
+curl \
+  -F 'name="My creative title"' \
+  -F 'object_id=<PAGE_ID>' \
+  -F 'source_instagram_media_id=<IG_MEDIA_ID>' \
+  -F 'facebook_branded_content'={
+    "sponsor_page_id": "<ADVERTISER_FB_ID>"
+  } \
+  -F 'instagram_branded_content'={
+    "sponsor_id": "<ADVERTISER_IG_ID>"
+  }
+  -F 'asset_feed_spec={ 
+    "optimization_type": "PLACEMENT",
+    "asset_customization_rules": [
+          {
+            "image_label": {
+              "name": "<IMAGE-LABEL>"
+            },
+            "customization_spec": {
+              "publisher_platforms": [
+                "instagram"
+              ],
+              "instagram_positions": [
+                "stream"
+              ]
+            }
+          }
+        ]
+       // other asset feed spec fieldS
+     }' \
+  -F 'access_token=<ACCESS_TOKEN>' \
+
+  https://graph.facebook.com/v21.0/act_<AD_ACCOUNT_ID>/adcreatives"
